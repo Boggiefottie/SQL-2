@@ -1,0 +1,77 @@
+Chit No: 1 SPPU DBMS LAB 
+Problem Statement: Design and Develop SQL DDL statements on Schema given.Schema: employee_master (emp_id,first name,middle,last name,department,manager id.)branch_master  (branch id ,branch name) 
+1. Insert records in branch_master 
+2. Insert records in employee_master. 
+3. Create index on emp_name column of employee_master. 
+4. Create a view containing employee details 
+Chit No: 2 SPPU DBMS LAB 
+Problem Statement: Design following SQL DML statements: Create a university/college database containing following tables-Student (stud_idi, deptnm, sem, name, yr, credits) 
+Teaches (teacher_id, teacher_name, salary, deptnm) 
+1. Insert records into all tables. 
+2. Update record on student tables as department name comp to IT. 
+3. Find the department that has highest or average salary 
+4. Delete the records of all teacher with salary below 2000. 
+5. Find the sum of salary of each department(use groupby).
+Chit No: 3 SPPU DBMS LAB 
+Emp( empId int ,empName varchar(10),empSal int ,empDeptId int) Dept(deptId int, deptName varchar(10)) 
+Set appropriate primary key and Foreign key. 
+1. Create table Emp(empID) and Dept(deptID). 
+2. Add Not Null constraint to empName. 
+3. Insert few Record. 
+4. Add Unique to deptLoc. 
+5. Add column deptloc varchar(10) to dept table. 
+Chit No: 4 SPPU DBMS LAB 
+Emp( empId int ,empName varchar(10),empSal int ,empDeptId int) Dept(deptId int, deptName varchar(10)) 
+1. Insert few Record. 
+2. List employees belonging to department 30, 40, or 10 
+3. List the employee details whose salary is between 10000 to 30000. 4. List total no of employee. 
+5. List average sal of each deptID. 
+6. List employee details in ascending order of salary. 
+Chit No: 5 SPPU DBMS LAB 
+Demonstrate all types of JOIN on following schema 
+customer(customer_id,first_name) 
+orders(order_id,amount,customer_id);
+Chit No: 6 SPPU DBMS LAB 
+Stored Procedure : create stored procedure to calculate fine of students. Consider Tables: 
+1. Borrower(Roll_no, Name, DateofIssue, NameofBook, Status) 
+2. Fine(Roll_no,Date,Amt) 
+∙ Accept Roll_no and Name of Book from user. 
+∙ Check the number of days (from date of issue). 
+∙ If days are between 15 to 30 then fine amount will be Rs 5per day. 
+∙ If no. of days>30, per day fine will be Rs 50 per day and for days less than 30, Rs. 5per  day. 
+∙ After submitting the book, status will change from I to R. 
+∙ If condition of fine is true, then details will be stored into fine table. 
+∙ Also handles the exception by named exception handler 
+Chit No: 7 SPPU DBMS LAB 
+Write a Stored Procedure namely proc_Grade for the categorization of student. 
+If marks scored by students in examination is <=1500 and marks>=990 then student will be placed in distinction category if marks scored are between 989 and 900 category is firstclass, if  marks 899 and 825 category is Higher Second Class. 
+Stud_Marks(name, total_marks) 
+Result(Roll,Name, Class)
+Chit No: 8 SPPU DBMS LAB 
+Cursors: Write a PL/SQL block of code using parameterized Cursor that will merge the data available in the newly created table N_RollCall with the data available in the table O_RollCall. If the data in the first table already exist in the second table then that data should be skipped. 
+Chit No: 9 SPPU DBMS LAB  Write PL/SQL block using explicit cursor for following requirements: College has decided to  mark all those students detained (D) who are having attendance less than 75%. Whenever such  update takes place, a record for the same is maintained in the d_stud table. 
+Chit No: 10 SPPU DBMS LAB 
+Database Trigger ( Before update and before delete) 
+Write a database trigger on Library table. The System should keep track of the records that are  being updated or deleted. The old value of updated or deleted records should be added in Library_Audit table. 
+Chit No: 11 SPPU DBMS LAB 
+Database Connectivity: 
+Write a program to implement MySQL/Oracle database connectivity with any front endlanguage to implement Database navigation operations (add, delete, edit etc.)
+Chit No: 12 SPPU DBMS LAB Develop MongoDB Queries using CRUD operations. 
+Create a collection student in mongodb and insert few documents with fields (stud_id,  stud_name, dept, marks)  
+1. Find students having marks greater than 50  
+2. Find students having marks between 50 and 80  
+3. Find students having marks more than 60 from ‘Computer’ department  4. Update marks of all students from ‘Civil’ department. Set marks to 30  
+5. Delete students from ‘Chemical’ department having marks less than 30  
+Chit No: 13 SPPU DBMS LAB 
+MongoDB - Aggregation and Indexing: Design and Develop MongoDB Queries using aggregation and indexing with suitable example using MongoDB. 
+Chit No: 14 SPPU DBMS LAB 
+Implement Map reduces operation with suitable example using MongoDB. 
+1. Create a collection bank in mongodb and insert few documents with fields (cust_id,  cust_name, branch, balance)  
+∙ Write a MapReduce function to display balance in each branch of the bank. 
+2. Create a collection books in mongodb and insert few documents with fields (book_id, title,  author, type)  
+∙ Write a MapReduce function to display number of books of each type
+Chit No: 15 SPPU DBMS LAB 
+Write a program to implement MongoDB database connectivity with any front end language to implement Database navigation operations (add, delete, edit etc.) 
+Chit No: 16 SPPU DBMS LAB 
+Create ER diagram for College Database with following entity sets {Student, Course, Professor)  and  
+Record their relationship with each other including mapping cardinality and constraints and  create the table for above schema. 
