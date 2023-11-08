@@ -1,0 +1,55 @@
+import com.mongodb.*;
+public class Mongo {
+public static void main( String args[] ) {
+ try{
+ MongoClient mongoClient = new MongoClient( "localhost" , 27017 );
+ DB db = mongoClient.getDB( "test" );
+ System.out.println("Connect to database successfully");
+ DBCollection col1=db.createCollection("shree1",new BasicDBObject());
+ System.out.println("collection created");
+ DBCollection col2=db.createCollection("shruti2",new BasicDBObject());
+ System.out.println("collection created");
+ DBCollection col1=db.getCollection("shree1");
+ System.out.println("collection created");
+64
+
+ BasicDBObject doc1 = new BasicDBObject();
+ doc1.put("name", "shraddha");
+ doc1.put("website", "google.com");
+
+ BasicDBObject doc2 = new BasicDBObject();
+ doc2.put("addressLine1", "Sweet Home");
+ doc2.put("addressLine2", "Karol Bagh");
+ doc2.put("addressLine3", "New Delhi, India");
+
+ col1.insert(new BasicDBObject[] {doc1,doc2});
+
+ }catch(Exception e){
+ System.err.println( e.getClass().getName() + ": " + e.getMessage()
+);
+ }
+ }
+}
+/*output
+> show dbs
+PL01 0.078GB
+abc 0.078GB
+cat 0.078GB
+doc 0.078GB
+local 0.078GB
+maggi 0.078GB
+mdb 0.078GB
+suj 0.078GB
+test 0.078GB
+xyz 0.078GB
+> use doc
+switched to db doc
+> show collections
+shree1
+shruti2
+> db.shree1.find()
+{ "_id" : ObjectId("57ac2983522ed0bb4f416f15"), "name" : "shraddha",
+"website" : "google.com" }
+{ "_id" : ObjectId("57ac2983522ed0bb4f416f16"), "addressLine1" : "Sweet
+Home", "addressLine2" : "Karol Bagh", "addressLine3" : "New Delhi, India" }
+*/
