@@ -1,0 +1,19 @@
+create or replace trigger trigger_1
+after insert or update  or delete on lib_tab for each row
+enable
+	begin
+		if updating then
+			dbms_output.put_line(:old.status);
+			insert into lib_audit values(sysdate,:old.book_name,:old.status,:new.status,' UPDATE');
+		
+		elsif inserting then
+			dbms_output.put_line(:new.book_name||' inserting');
+			insert into lib_audit values(sysdate,:new.book_name,NULL,:new.status,'INSERT');
+		
+		elsif deleting then
+			dbms_output.put_line(:old.book_name||' deleting');
+			insert into lib_audit values(sysdate,:old.book_name,:old.status,NULL,'DELETE');
+			
+		end if;
+	end;
+/

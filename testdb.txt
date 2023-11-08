@@ -1,0 +1,4 @@
+CREATE TABLE player(
+id int,
+sport varchar(20)
+);

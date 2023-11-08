@@ -1,0 +1,42 @@
+drop table new_class;
+
+
+
+Create table old_class(roll number(10), name varchar(10));
+drop table old_class;
+
+insert into old_class values(11,'aaa');
+insert into old_class values(12,'bbb');
+insert into old_class values(13,'ccc');
+insert into old_class values(14,'ddd');
+
+select * from old_class;
+
+Create table new_class(roll number(10), name varchar(10));
+select * from new_class;
+
+Declare
+cursor crsr_class is select * from old_class;
+cursor crsr_chk(str_name varchar) is select roll from new_class where name = str_name; 
+str_roll new_class.roll%type;
+str_name new_class.name%type;
+v varchar(10);
+Begin
+Open crsr_class;
+Loop
+fetch crsr_class into str_roll,str_name;
+Exit When crsr_class%NOTFOUND;
+Open crsr_chk(str_name);
+Fetch crsr_chk into v;
+if crsr_chk%FOUND Then
+dbms_output.put_line('Name'|| str_name || 'exist');
+Else
+dbms_output.put_line('Name'|| str_name || ' not exist. Inserting in New_class table'); 
+insert into new_class values(str_roll,str_name); 
+End if;
+Close crsr_chk;
+End loop;
+Close crsr_class;
+End;
+/
+

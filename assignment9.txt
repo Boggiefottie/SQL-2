@@ -1,0 +1,32 @@
+SET SERVEROUTPUT ON
+SET VERIFY OFF
+drop table library_audit_1
+
+
+create table borrow_500 (rollin int, name varchar(30), dateofissue varchar(100), nameofbook
+varchar(30), status varchar(10));
+
+
+
+insert into borrow_500 values (104, 'abc4', '2017-07-20', 'ds', 'i');
+
+insert into borrow_500 values(105, 'abc5', '2017-07-23','daa', 'r');
+insert into borrow_500 values(106, 'nisha', '2017-08-10', 'splm', 'r' );
+
+
+create table library_audit_1(rollin int, name char(10), dateofissue varchar(100), nameofbook
+char(10), status char(100), ts varchar(100));
+
+select * from library_audit_1;
+
+create or replace trigger new_trigger
+after insert on borrow_500
+for each row
+begin
+insert into library_audit_1 values(new.rollin, new.name, new.dateofissue, new.nameofbook,
+new.status, current_timestamp);
+end;
+/
+
+
+select * from borrow_500;
